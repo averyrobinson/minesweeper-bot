@@ -1,0 +1,28 @@
+Flagging
+--------
+
+1. If for a number, A, we have
+   rem(A) = N(unclicked_neighbors(A)) + N(flagged_neighbors(A))
+   then flag all unclicked_neighbors(A).
+
+2. If a number, A, with rem(A) /= 0, has a set of neighbors that are also numbers, Bs,
+   such that the unclicked neighbors of each B are all neighbors of A,
+   and unclicked_neighbors(A) \ union_over_B(unclicked_neighbors(B)) nonempty,
+   and rem(A) - sum_over_B(rem(B)) = N(unclicked_neighbors(A) \
+         union_over_B(unclicked_neighbors(B)))
+   then flag all unclicked_neighbors(A) \ union_over_B(unclicked_neighbors(B)).
+
+Clicking
+--------
+
+1. If for a number, A, we have
+   rem(A) == 0
+   then click all unclicked neighbors.
+
+2. If a number, A, has a set of neighbors that are also numbers, Bs, s.t.
+   unclicked_neighbors(A) \ union_over_B(unclicked_neighbors(B)) nonempty,
+   and all sets unclicked_neighbors(B) are disjoint,
+   and rem(A) = sum_over_B(
+                  rem(B) - N(unclicked_neighbors(B) \ unclicked_neighbors(A))
+                )
+   then click all unclicked_neighbors(A) \ union_over_B(unclicked_neighbors(B)).

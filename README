@@ -1,0 +1,4 @@
+To watch the Minesweeper bot run:
+
+    ghc MinesweeperGUI
+    ./MinesweeperGUI
